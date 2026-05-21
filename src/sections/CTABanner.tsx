@@ -1,4 +1,5 @@
 import { MessageCircle, Phone, CheckCircle } from 'lucide-react';
+import { trackContactAction } from '../lib/gtag';
 
 export default function CTABanner() {
   return (
@@ -36,6 +37,7 @@ export default function CTABanner() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp text-lg py-4 px-8 w-full sm:w-auto justify-center"
+              onClick={() => trackContactAction('whatsapp')}
             >
               <MessageCircle size={22} />
               تواصل واتساب الآن
@@ -43,6 +45,7 @@ export default function CTABanner() {
             <a
               href="tel:+966576807249"
               className="btn-primary text-lg py-4 px-8 w-full sm:w-auto justify-center"
+              onClick={() => trackContactAction('phone')}
             >
               <Phone size={22} />
               اتصل: 0576807249
