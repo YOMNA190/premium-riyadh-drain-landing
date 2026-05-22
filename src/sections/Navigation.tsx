@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { trackContactAction } from '../lib/gtag';
+import { handleContactClick } from '../lib/gtag';
 
 const navLinks = [
   { label: 'الرئيسية', href: '#hero' },
@@ -65,7 +65,7 @@ export default function Navigation() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp text-sm py-2 px-4"
-            onClick={() => trackContactAction('whatsapp')}
+            onClick={(e) => handleContactClick(e, 'whatsapp')}
           >
             واتساب
           </a>
@@ -100,7 +100,7 @@ export default function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp text-sm py-3 px-4 mt-2 justify-center"
-              onClick={() => trackContactAction('whatsapp')}
+              onClick={(e) => handleContactClick(e, 'whatsapp')}
             >
               تواصل عبر واتساب
             </a>

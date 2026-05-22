@@ -1,5 +1,5 @@
 import { MessageCircle, Phone } from 'lucide-react';
-import { trackContactAction } from '../lib/gtag';
+import { handleContactClick } from '../lib/gtag';
 
 export default function StickyMobileCTA() {
   return (
@@ -10,7 +10,7 @@ export default function StickyMobileCTA() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex-1 bg-[#22C55E] hover:bg-[#16A34A] text-white font-bold flex items-center justify-center gap-2 transition-colors"
-          onClick={() => trackContactAction('whatsapp')}
+          onClick={(e) => handleContactClick(e, 'whatsapp')}
         >
           <MessageCircle size={20} />
           <span>واتساب</span>
@@ -18,7 +18,7 @@ export default function StickyMobileCTA() {
         <a
           href="tel:+966576807249"
           className="flex-1 bg-yellow-brand hover:bg-yellow-hover text-dark-bg font-bold flex items-center justify-center gap-2 transition-colors"
-          onClick={() => trackContactAction('phone')}
+          onClick={(e) => handleContactClick(e, 'phone')}
         >
           <Phone size={20} />
           <span>اتصل الآن</span>

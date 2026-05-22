@@ -1,5 +1,5 @@
 import { Phone, MessageCircle, Clock, MapPin } from 'lucide-react';
-import { trackContactAction } from '../lib/gtag';
+import { handleContactClick } from '../lib/gtag';
 
 const quickLinks = [
   { label: 'الرئيسية', href: '#hero' },
@@ -43,7 +43,7 @@ export default function Footer() {
               <a
                 href="tel:+966576807249"
                 className="flex items-center gap-2 text-gray-400 hover:text-yellow-brand transition-colors text-sm"
-                onClick={() => trackContactAction('phone')}
+                onClick={(e) => handleContactClick(e, 'phone')}
               >
                 <Phone size={16} />
                 <span>0576807249</span>
@@ -53,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-400 hover:text-green-500 transition-colors text-sm"
-                onClick={() => trackContactAction('whatsapp')}
+                onClick={(e) => handleContactClick(e, 'whatsapp')}
               >
                 <MessageCircle size={16} />
                 <span>واتساب: 0576807249</span>

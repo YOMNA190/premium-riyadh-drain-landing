@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { MessageCircle, Phone, Clock, Shield, BadgeCheck } from 'lucide-react';
-import { trackContactAction } from '../lib/gtag';
+import { handleContactClick } from '../lib/gtag';
 
 const stats = [
   { value: 10000, prefix: '+', suffix: '', label: 'عملية تسليك' },
@@ -129,7 +129,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-base justify-center"
-                onClick={() => trackContactAction('whatsapp')}
+                onClick={(e) => handleContactClick(e, 'whatsapp')}
               >
                 <MessageCircle size={20} />
                 تواصل واتساب
@@ -137,7 +137,7 @@ export default function Hero() {
               <a
                 href="tel:+966576807249"
                 className="btn-primary text-base justify-center"
-                onClick={() => trackContactAction('phone')}
+                onClick={(e) => handleContactClick(e, 'phone')}
               >
                 <Phone size={20} />
                 اتصل الآن: 0576807249
