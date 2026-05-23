@@ -1,0 +1,8 @@
+{
+  "name": "premium-riyadh-drain-landing",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html dist/ && cp -r images dist/ 2>/dev/null || true",
+    "start": "serve dist"
+  }
+}
