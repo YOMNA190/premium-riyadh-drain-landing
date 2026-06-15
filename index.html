@@ -23,16 +23,26 @@
     gtag('config', 'AW-18242146892');
   </script>
 
-  <!-- Event snippet for Phone call conversion page -->
+  <!-- Conversion Tracking Script -->
   <script>
-    function gtag_report_conversion(url) {
+    function gtag_report_conversion(url, type) {
       var callback = function () {
         if (typeof(url) != 'undefined') {
           window.location = url;
         }
       };
+
+      // تحديد الكود بناءً على نوع التحويل
+      var send_to_code = 'AW-18242146892/9CgICLm0zb8cEMykxPpD'; // الافتراضي (اتصال 1)
+      
+      if (type === 'whatsapp') {
+        send_to_code = 'AW-18242146892/3fqUCLO0zb8cEMykxPpD'; // جهة اتصال (واتساب)
+      } else if (type === 'phone_alt') {
+        send_to_code = 'AW-18242146892/pP1jCLC0zb8cEMykxPpD'; // انقر للاتصال (إضافي)
+      }
+
       gtag('event', 'conversion', {
-          'send_to': 'AW-18242146892/9CgICLm0zb8cEMykxPpD',
+          'send_to': send_to_code,
           'value': 1.0,
           'currency': 'EGP',
           'event_callback': callback
@@ -261,7 +271,7 @@
         <a href="#about">لماذا نحن؟</a>
         <a href="#workflow">طريقة العمل</a>
         <a href="#gallery">أعمالنا</a>
-        <li><a href="tel:0576807249" class="nav-action-btn" onclick="return gtag_report_conversion('tel:0576807249');"><i class="fa-solid fa-phone-volume"></i> 0576807249</a></li>
+        <li><a href="tel:0576807249" class="nav-action-btn" onclick="return gtag_report_conversion('tel:0576807249', 'phone');"><i class="fa-solid fa-phone-volume"></i> 0576807249</a></li>
       </nav>
 
       <button class="nav-toggle" id="navToggle">
@@ -281,8 +291,8 @@
           <h1 class="hero-title">أقوى شركة <span>تسليك مجاري بالكمبروسر</span> بالرياض لفتح أصعب الانسدادات</h1>
           <p class="hero-lead">نستخدم تكنولوجيا الضغط الهيدروليكي العالي ونفخ الهواء (الكمبروسر) لتنظيف مواسير الصرف الصحي وإزالة الدهون والتكلسات نهائياً بدون تكسير.</p>
           <div class="hero-btn-group">
-            <a href="tel:0576807249" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249');"><i class="fa-solid fa-phone-flip"></i> اتصل الآن: 0576807249</a>
-            <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
+            <a href="tel:0576807249" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249', 'phone');"><i class="fa-solid fa-phone-flip"></i> اتصل الآن: 0576807249</a>
+            <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249', 'whatsapp');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
           </div>
         </div>
       </div>
@@ -302,8 +312,8 @@
             <div class="bento-content">
               <div class="bento-icon"><i class="fa-solid fa-wind"></i></div>
               <h3>تسليك المجاري بضغط الهواء (الكمبروسر)</h3>
-              <p>التقنية الأحدث في الرياض لتفتيت أصعب كتل الدهون والمخلفات الصلبة داخل المواسير عبر ضخ هواء مضغوط بقوة هائلة تضمن سريان المياه فوراً.</p>
-              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249');">اطلب الخدمة الآن <i class="fa-solid fa-arrow-left"></i></a>
+              <p>التقنية الأحدث في الرياض لتفتيت أصعب كتل الدهون والمخلفات الصلبة داخل المواسير عبر ضضخ هواء مضغوط بقوة هائلة تضمن سريان المياه فوراً.</p>
+              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249', 'phone');">اطلب الخدمة الآن <i class="fa-solid fa-arrow-left"></i></a>
             </div>
           </div>
 
@@ -313,7 +323,7 @@
               <div class="bento-icon"><i class="fa-solid fa-truck-moving"></i></div>
               <h3>شفط بيارات وتنظيف خزانات الصرف</h3>
               <p>أسطول من وايتات الشفط بأحجام مختلفة للتعامل مع كافة سعات البيارات في الفلل والمجمعات السكنية مع التنظيف والتعقيم.</p>
-              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249');">اتصل بنا <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249', 'phone');">اتصل بنا <i class="fa-solid fa-arrow-left"></i></a>
             </div>
           </div>
 
@@ -323,7 +333,7 @@
               <div class="bento-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
               <h3>كشف تسربات المياه إلكترونياً</h3>
               <p>تحديد أماكن الخلل في شبكة المياه والصرف بدقة متناهية باستخدام أجهزة الاستشعار الصوتية بدون الحاجة لتكسير الجدران أو الأرضيات.</p>
-              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249');">افحص منزلك <i class="fa-solid fa-arrow-left"></i></a>
+              <a href="tel:0576807249" class="bento-link" onclick="return gtag_report_conversion('tel:0576807249', 'phone');">افحص منزلك <i class="fa-solid fa-arrow-left"></i></a>
             </div>
           </div>
         </div>
@@ -354,7 +364,7 @@
 
         <div class="seo-long-text">
           <h3>أفضل شركة تسليك مجاري بالكمبروسر بالرياض</h3>
-          <p>تعتبر عملية <strong>تسليك المجاري بالكمبروسر</strong> من أكثر الحلول فعالية وديمومة، حيث تعمل قوة الضغط على إزاحة العوائق وتطهير جدران المواسير من الداخل من التراكمات الدهنية التي تسبب الروائح الكريهة. في شركة الريادة، نعتمد على كوادر فنية مدربة تمتلك الخبرة الطويلة في التعامل مع كافة أنواع شبكات الصرف الصحي، سواء كانت في المنازل القديمة أو المنشآت الحديثة.</p>
+          <p>تعتبر عملية <strong>تسليك المجاري بالكمبروسر</strong> من أكثر الحلول فعالية وديمومة، حيث تعمل قوة الضغط على إزاحة العوائق وتطهير جدران المواسير من الداخل من التراكمات الدهنية التي تسبب الروائح الكريهة. في شركة الريادة، نعتمد على كوادر فنية مدربة تمتلك الخبرة الطويلة في التعامل مع كافة أنواع شبكات الصرف الصحي، سواء كانت في المنازل القديمة أو المنشأات الحديثة.</p>
           <p>إذا كنت تعاني من ارتداد المياه في الحمامات أو المطابخ، أو تلاحظ بطء في تصريف المياه، فإن تدخل فريقنا المختص بـ <strong>كمبروسر المجاري</strong> سيحل المشكلة جذرياً. نحن نستخدم مواد كيميائية آمنة ومعتمدة تساعد في عملية التفتيت مع قوة الضغط الهيدروليكي لضمان نظافة المواسير بنسبة 100%.</p>
         </div>
       </div>
@@ -447,8 +457,8 @@
         <h2 style="font-size: 2.2rem; margin-bottom: 20px;">لا تدع مشاكل الصرف تعكر صفو يومك</h2>
         <p style="color: var(--text-muted); margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto;">نحن هنا لخدمتك على مدار الساعة بجميع أحياء الرياض. تواصل معنا الآن واحصل على فحص مجاني.</p>
         <div class="hero-btn-group">
-          <a href="tel:0576807249" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249');"><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0576807249</a>
-          <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
+          <a href="tel:0576807249" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249', 'phone_alt');"><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0576807249</a>
+          <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249', 'whatsapp');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
         </div>
       </div>
     </section>
@@ -478,19 +488,19 @@
   </footer>
 
   <div class="conversion-hub">
-    <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="floating-btn f-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249');" title="واتساب مباشر">
+    <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="floating-btn f-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249', 'whatsapp');" title="واتساب مباشر">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
-    <a href="tel:0576807249" class="floating-btn f-phone pulse-effect" onclick="return gtag_report_conversion('tel:0576807249');" title="اتصال هاتفي">
+    <a href="tel:0576807249" class="floating-btn f-phone pulse-effect" onclick="return gtag_report_conversion('tel:0576807249', 'phone');" title="اتصال هاتفي">
       <i class="fa-solid fa-phone"></i>
     </a>
   </div>
 
   <div class="mobile-action-bar">
-    <a href="tel:0576807249" class="mobile-btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249');">
+    <a href="tel:0576807249" class="mobile-btn btn-gold" onclick="return gtag_report_conversion('tel:0576807249', 'phone');">
       <i class="fa-solid fa-phone-flip"></i> اتصل الآن
     </a>
-    <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="mobile-btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249');">
+    <a href="https://wa.me/966576807249" target="_blank" rel="noopener noreferrer" class="mobile-btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966576807249', 'whatsapp');">
       <i class="fa-brands fa-whatsapp"></i> واتساب
     </a>
   </div>
