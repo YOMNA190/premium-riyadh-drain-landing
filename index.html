@@ -25,27 +25,39 @@
   
   <script>
     function gtag_report_phone_conversion(url) {
-      var callback = function () {
+      var navigated = false;
+      var navigate = function () {
+        if (navigated) return;
+        navigated = true;
         if (typeof(url) != 'undefined') {
           window.location = url;
         }
       };
+      // Fallback: if gtag doesn't respond within 1s (ad blocker, slow network,
+      // consent tools, etc.), still complete the phone call.
+      setTimeout(navigate, 1000);
       gtag('event', 'conversion', {
           'send_to': 'AW-18242146892/0W6xCODzyMIcEN7dgf5D',
-          'event_callback': callback
+          'event_callback': navigate
       });
       return false;
     }
 
     function gtag_report_whatsapp_conversion(url) {
-      var callback = function () {
+      var navigated = false;
+      var navigate = function () {
+        if (navigated) return;
+        navigated = true;
         if (typeof(url) != 'undefined') {
           window.location = url;
         }
       };
+      // Fallback: if gtag doesn't respond within 1s (ad blocker, slow network,
+      // consent tools, etc.), still open WhatsApp.
+      setTimeout(navigate, 1000);
       gtag('event', 'conversion', {
           'send_to': 'AW-18242146892/nw8TCNTzyMIcEN7dgf5D',
-          'event_callback': callback
+          'event_callback': navigate
       });
       return false;
     }
