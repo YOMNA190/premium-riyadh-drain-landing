@@ -14,30 +14,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;900&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Google tag (gtag.js) DISABLED -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18177050440"></script>
   <script>
-    // Disabled to prevent dynamic number replacement
-    /*
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    // Config with phone number replacement disabled if possible, or just standard config
     gtag('config', 'AW-18177050440');
-    */
   </script>
 
   <!-- Event snippet for جهة اتصال conversion page -->
   <script>
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
+      // Improved conversion reporting that doesn't block the link
       gtag('event', 'conversion', {
-          'send_to': 'AW-18177050440/mIreCM7hoLEcEMiOv9tD',
-          'event_callback': callback
+          'send_to': 'AW-18177050440/mIreCM7hoLEcEMiOv9tD'
       });
-      return false;
+      return true; // Return true to allow the browser to follow the link immediately
     }
   </script>
 
@@ -255,7 +249,7 @@
         <a href="#why-us">لماذا نحن</a>
         <a href="#process">طريقة العمل</a>
         <a href="#faq">الأسئلة الشائعة</a>
-        <a href="tel:0506271272" class="nav-action-btn" ><i class="fa-solid fa-phone"></i> 0506271272</a>
+        <a href="tel:0506271272" class="nav-action-btn" onclick="return gtag_report_conversion('tel:0506271272');"><i class="fa-solid fa-phone"></i> 0506271272</a>
       </nav>
 
       <button class="nav-toggle" id="navToggle">
@@ -273,8 +267,8 @@
         <h1 class="hero-title">أفضل شركة <span>تسليك مجاري بالكمبروسر</span> بالرياض</h1>
         <p class="hero-lead">نستخدم أحدث تقنيات الضغط الهيدروليكي النفاث لتنظيف وتفتيت الدهون في مواسير الصرف الصحي بدون تكسير. حلول نهائية ومضمونة لكافة انسدادات المجاري بأحياء الرياض.</p>
         <div class="hero-btn-group">
-          <a href="tel:0506271272" class="btn btn-gold" ><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0506271272</a>
-          <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" ><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
+          <a href="tel:0506271272" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0506271272');"><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0506271272</a>
+          <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966506271272');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
         </div>
       </div>
     </div>
@@ -299,7 +293,7 @@
             <div class="bento-icon"><i class="fa-solid fa-wind"></i></div>
             <h3>تسليك المجاري بالكمبروسر (الضغط)</h3>
             <p>نعتمد على وحدات ضغط هواء ومياه نفاثة تصل إلى أعمق نقاط الانسداد لتفتيت الكتل الصلبة والدهون المتراكمة وتحويلها إلى سائل يسهل تصريفه، مما يضمن نظافة المواسير تماماً.</p>
-            <a href="tel:0506271272" class="bento-link" >اطلب الخدمة الآن <i class="fa-solid fa-arrow-left"></i></a>
+            <a href="tel:0506271272" class="bento-link" onclick="return gtag_report_conversion('tel:0506271272');">اطلب الخدمة الآن <i class="fa-solid fa-arrow-left"></i></a>
           </div>
         </div>
 
@@ -452,8 +446,8 @@
         <h2>جاهزون لخدمتك الآن</h2>
         <p>لا تتردد في الاتصال بنا للحصول على استشارة مجانية وفحص دقيق لمشكلة الصرف لديك. نضمن لك الحل النهائي من الزيارة الأولى.</p>
         <div class="hero-btn-group">
-          <a href="tel:0506271272" class="btn btn-gold" ><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0506271272</a>
-          <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" ><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
+          <a href="tel:0506271272" class="btn btn-gold" onclick="return gtag_report_conversion('tel:0506271272');"><i class="fa-solid fa-phone-volume"></i> اتصل بـ 0506271272</a>
+          <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966506271272');"><i class="fa-brands fa-whatsapp"></i> واتساب مباشر</a>
         </div>
       </div>
     </div>
@@ -478,10 +472,10 @@
 
   <!-- Mobile Action Bar -->
   <div class="mobile-actions">
-    <a href="tel:0506271272" class="mobile-btn btn-gold" >
+    <a href="tel:0506271272" class="mobile-btn btn-gold" onclick="return gtag_report_conversion('tel:0506271272');">
       <i class="fa-solid fa-phone-flip"></i> اتصل الآن
     </a>
-    <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="mobile-btn btn-whatsapp" >
+    <a href="https://wa.me/966506271272" target="_blank" rel="noopener noreferrer" class="mobile-btn btn-whatsapp" onclick="return gtag_report_conversion('https://wa.me/966506271272');">
       <i class="fa-brands fa-whatsapp"></i> واتساب
     </a>
   </div>
