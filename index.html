@@ -24,14 +24,20 @@
     gtag('config', 'AW-18177050440');
   </script>
 
-  <!-- Event snippet for جهة اتصال conversion page -->
+  <!-- Event snippet for جهة اتصال conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
     function gtag_report_conversion(url) {
-      // Improved conversion reporting that doesn't block the link
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
       gtag('event', 'conversion', {
-          'send_to': 'AW-18177050440/mIreCM7hoLEcEMiOv9tD'
+          'send_to': 'AW-18177050440/mIreCM7hoLEcEMiOv9tD',
+          'event_callback': callback
       });
-      return true; // Return true to allow the browser to follow the link immediately
+      return false;
     }
   </script>
 
